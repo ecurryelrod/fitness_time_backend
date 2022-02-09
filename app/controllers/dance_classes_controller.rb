@@ -46,6 +46,6 @@ class DanceClassesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dance_class_params
-      params.require(:dance_class).permit(:title, :description, :date, :time, :level, :price, :teacher_id, :studio_id)
+      params.require(:dance_class).permit(:title, :description, :date, :start_time, :end_time, :price, :teacher_id, :studio_id, :level_id)
     end
 end
