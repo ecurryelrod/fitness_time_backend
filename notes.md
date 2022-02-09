@@ -9,19 +9,22 @@ Studio
 Class
 - title
 - description
-- date/time
-- level
+- date
+- start/end time
 - price
 - teacher_id
 - studio_id
+- belongs_to :level
 - belongs_to :studio
 - belongs_to :teacher
+
+ClassLevel
+- title
+- has_many :classes
 
 Teacher
 - name
 - bio
 - studio_id
-- has_many classes
-- belongs_to :studio
-- ** (start with belongs_to relationship? and maybe make has_many later???)
-- ** has_many :studios, through: :classes
+- has_many :classes
+- has_many :studios, through: :classes
