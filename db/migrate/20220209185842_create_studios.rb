@@ -3,7 +3,7 @@ class CreateStudios < ActiveRecord::Migration[7.0]
     create_table :studios do |t|
       t.string :name
       t.string :email
-      t.integer :phone
+      t.bigint :phone
       t.string :address_1
       t.string :address_2
       t.string :city
