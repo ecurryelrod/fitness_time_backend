@@ -1,4 +1,4 @@
-class DanceClassesController < ApplicationController
+class Api::DanceClassesController < ApplicationController
   before_action :set_dance_class, only: %i[ show update destroy ]
 
   # GET /dance_classes

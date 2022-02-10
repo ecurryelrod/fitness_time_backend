@@ -1,4 +1,4 @@
-class StudiosController < ApplicationController
+class Api::StudiosController < ApplicationController
   before_action :set_studio, only: %i[ show update destroy ]
 
   # GET /studios
