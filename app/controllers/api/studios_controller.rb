@@ -3,14 +3,14 @@ class Api::StudiosController < ApplicationController
 
   # GET /studios
   def index
-    @studios = Studio.all
-
-    render json: @studios
+    studios = Studio.all
+    
+    render json: StudioSerializer.new(studios)
   end
 
   # GET /studios/1
   def show
-    render json: @studio
+    render json: StudioSerializer.new(@studio)
   end
 
   # POST /studios

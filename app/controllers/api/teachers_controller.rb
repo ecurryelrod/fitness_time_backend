@@ -3,14 +3,14 @@ class Api::TeachersController < ApplicationController
 
   # GET /teachers
   def index
-    @teachers = Teacher.all
-
-    render json: @teachers
+    teachers = Teacher.all
+    
+    render json: TeacherSerializer.new(teachers)
   end
 
   # GET /teachers/1
   def show
-    render json: @teacher
+    render json: TeacherSerializer.new(@teacher)
   end
 
   # POST /teachers
