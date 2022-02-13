@@ -25,7 +25,7 @@ ClassLevel
 Teacher
 - name
 - bio
-- image url for photo of themselves
+- *** image url for photo of themselves ***
 - studio_id
 - has_many :classes
 - has_many :studios, through: :classes
