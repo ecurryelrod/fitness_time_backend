@@ -4,7 +4,7 @@ class DanceClassesController < ApplicationController
   # GET /dance_classes
   def index
     dance_classes = DanceClass.all
-    
+
     # render json: DanceClassSerializer.new(dance_classes)
     render json: dance_classes
   end
@@ -49,6 +49,6 @@ class DanceClassesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dance_class_params
-      params.require(:dance_class).permit(:title, :description, :date, :start_time, :end_time, :price, :teacher_id, :studio_id, :level_id)#, teacher_attributes:[:id, :name, :bio])
+      params.require(:dance_class).permit(:title, :description, :date, :start_time, :end_time, :price, :teacher_id, :studio_id, :level_id)
     end
 end
