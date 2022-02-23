@@ -4,8 +4,7 @@ class DanceClassesController < ApplicationController
   # GET /dance_classes
   def index
     dance_classes = DanceClass.all
-    # options = {}
-    # options[:include] = [:studio]#, except: [:created_at, :updated_at]
+    
     # render json: DanceClassSerializer.new(dance_classes)
     render json: dance_classes
   end
