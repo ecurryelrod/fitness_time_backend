@@ -1,16 +1,18 @@
-class Api::StudiosController < ApplicationController
+class StudiosController < ApplicationController
   before_action :set_studio, only: %i[ show update destroy ]
 
   # GET /studios
   def index
     studios = Studio.all
     
-    render json: StudioSerializer.new(studios)
+    # render json: StudioSerializer.new(studios)
+    render json: studios
   end
 
   # GET /studios/1
   def show
-    render json: StudioSerializer.new(@studio)
+    # render json: StudioSerializer.new(@studio)
+    render json: @studio
   end
 
   # POST /studios

@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  namespace :api do 
     resources :dance_classes
     resources :teachers
     resources :studios
-  end
+    resources :levels, only: [:index, :show]
 end

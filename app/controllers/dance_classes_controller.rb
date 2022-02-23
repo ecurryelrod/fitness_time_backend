@@ -1,26 +1,30 @@
-class Api::DanceClassesController < ApplicationController
+class DanceClassesController < ApplicationController
   before_action :set_dance_class, only: %i[ show update destroy ]
 
   # GET /dance_classes
   def index
     dance_classes = DanceClass.all
-
-    render json: DanceClassSerializer.new(dance_classes)
+    # options = {}
+    # options[:include] = [:studio]#, except: [:created_at, :updated_at]
+    # render json: DanceClassSerializer.new(dance_classes)
+    render json: dance_classes
   end
 
   # GET /dance_classes/1
   def show
-    render json: DanceClassSerializer.new(@dance_class)
+    # render json: DanceClassSerializer.new(@dance_class)
+    render json: @dance_class
   end
 
   # POST /dance_classes
   def create
-    @dance_class = DanceClass.new(dance_class_params)
+    # dance_class = Studio.dance_classes.build(dance_class_params)
+    dance_class = DanceClass.new(dance_class_params)
 
-    if @dance_class.save
-      render json: @dance_class, status: :created, location: @dance_class
+    if dance_class.save
+      render json: dance_class, status: :created, location: dance_class
     else
-      render json: @dance_class.errors, status: :unprocessable_entity
+      render json: dance_class.errors, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +50,6 @@ class Api::DanceClassesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dance_class_params
-      params.require(:dance_class).permit(:title, :description, :date, :start_time, :end_time, :price, :teacher_id, :studio_id, :level_id)
+      params.require(:dance_class).permit(:title, :description, :date, :start_time, :end_time, :price, :teacher_id, :studio_id, :level_id)#, teacher_attributes:[:id, :name, :bio])
     end
 end

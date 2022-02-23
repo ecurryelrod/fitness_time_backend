@@ -1,16 +1,18 @@
-class Api::TeachersController < ApplicationController
+class TeachersController < ApplicationController
   before_action :set_teacher, only: %i[ show update destroy ]
 
   # GET /teachers
   def index
     teachers = Teacher.all
-    
-    render json: TeacherSerializer.new(teachers)
+
+    # render json: TeacherSerializer.new(teachers)
+    render json: teachers
   end
 
   # GET /teachers/1
   def show
-    render json: TeacherSerializer.new(@teacher)
+    # render json: TeacherSerializer.new(@teacher)
+    render json: @teacher
   end
 
   # POST /teachers
