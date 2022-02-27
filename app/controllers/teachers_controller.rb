@@ -5,14 +5,14 @@ class TeachersController < ApplicationController
   def index
     teachers = Teacher.all
 
-    # render json: TeacherSerializer.new(teachers)
-    render json: teachers
+    render json: TeacherSerializer.new(teachers)
+    # render json: teachers
   end
 
   # GET /teachers/1
   def show
-    # render json: TeacherSerializer.new(@teacher)
-    render json: @teacher
+    render json: TeacherSerializer.new(@teacher)
+    # render json: @teacher
   end
 
   # POST /teachers

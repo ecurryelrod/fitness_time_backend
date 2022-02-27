@@ -5,14 +5,14 @@ class DanceClassesController < ApplicationController
   def index
     dance_classes = DanceClass.all
 
-    # render json: DanceClassSerializer.new(dance_classes)
-    render json: dance_classes
+    render json: DanceClassSerializer.new(dance_classes)
+    # render json: dance_classes
   end
 
   # GET /dance_classes/1
   def show
-    # render json: DanceClassSerializer.new(@dance_class)
-    render json: @dance_class
+    render json: DanceClassSerializer.new(@dance_class)
+    # render json: @dance_class
   end
 
   # POST /dance_classes

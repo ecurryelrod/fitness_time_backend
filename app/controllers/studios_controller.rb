@@ -5,14 +5,14 @@ class StudiosController < ApplicationController
   def index
     studios = Studio.all
     
-    # render json: StudioSerializer.new(studios)
-    render json: studios
+    render json: StudioSerializer.new(studios)
+    # render json: studios
   end
 
   # GET /studios/1
   def show
-    # render json: StudioSerializer.new(@studio)
-    render json: @studio
+    render json: StudioSerializer.new(@studio)
+    # render json: @studio
   end
 
   # POST /studios

@@ -5,14 +5,14 @@ class LevelsController < ApplicationController
     def index
       levels = Level.all
       
-      # render json: LevelSerializer.new(levels)
-      render json: levels
+      render json: LevelSerializer.new(levels)
+      # render json: levels
     end
   
     # GET /studios/1
     def show
-      # render json: LevelSerializer.new(@level)
-      render json: @level
+      render json: LevelSerializer.new(@level)
+      # render json: @level
     end
   
     private
