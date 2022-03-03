@@ -21,7 +21,7 @@ class DanceClassesController < ApplicationController
     dance_class = DanceClass.new(dance_class_params)
 
     if dance_class.save
-      render json: dance_class, status: :created, location: dance_class
+      render json: DanceClassSerializer.new(dance_class), status: :created, location: dance_class
     else
       render json: dance_class.errors, status: :unprocessable_entity
     end
@@ -38,7 +38,11 @@ class DanceClassesController < ApplicationController
 
   # DELETE /dance_classes/1
   def destroy
-    @dance_class.destroy
+    if @dance_class.destroy
+      render json: {message: "Dance Class successfully destroyed"}
+    else
+      render json: {message: "Something went wrong! #{@dance_class.errors.full_messages}"}
+    end
   end
 
   private
