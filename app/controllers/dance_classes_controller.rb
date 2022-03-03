@@ -30,7 +30,7 @@ class DanceClassesController < ApplicationController
   # PATCH/PUT /dance_classes/1
   def update
     if @dance_class.update(dance_class_params)
-      render json: @dance_class
+      render json: DanceClassSerializer.new(@dance_class)
     else
       render json: @dance_class.errors, status: :unprocessable_entity
     end
