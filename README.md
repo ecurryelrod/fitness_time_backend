@@ -1,30 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# README
-
 Ruby Version 3.1
 Rails Version 7.0.2
 
@@ -34,7 +9,7 @@ link to frontend repo https://github.com/ecurryelrod/fitness_time_frontend
 Fitness Time is a very basic single page web application at this point, that utilized a Rails API backend with postgresql database and a Javascript frontend, with so room for growth. A fitness studio, or in this case a dance studio, can add dance classes that get displayed on the page, can be edited, or deleted. 
 
 ## Installation
-To initiate the API, clone this repository, change directories into /fitness_time_backend. Run `bundle install`, `rails db:create`, `rails db:migrate`, `rails db:seed` and then `rails s`. To see the API data navigate to http://127.0.0.1:3000/dance_classes http://127.0.0.1:3000/teachers http://127.0.0.1:3000/studios and/or http://127.0.0.1:3000/levels.
+To initiate the API, clone this repository, change directories into /fitness_time_backend. Run `bundle install`, `rails db:create`, `rails db:migrate`, `rails db:seed` and then `rails s`. To see the API data navigate to http://127.0.0.1:3000/dance_classes, http://127.0.0.1:3000/teachers, http://127.0.0.1:3000/studios, and/or http://127.0.0.1:3000/levels.
 ## Use
 From the frontend directory you can run `open index.html` to run the application
 
