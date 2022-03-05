@@ -1,7 +1,6 @@
 class StudiosController < ApplicationController
   before_action :set_studio, only: %i[ show update destroy ]
 
-  # GET /studios
   def index
     studios = Studio.all
     
@@ -9,13 +8,11 @@ class StudiosController < ApplicationController
     # render json: studios
   end
 
-  # GET /studios/1
   def show
     render json: StudioSerializer.new(@studio)
     # render json: @studio
   end
 
-  # POST /studios
   def create
     @studio = Studio.new(studio_params)
 
@@ -26,7 +23,6 @@ class StudiosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /studios/1
   def update
     if @studio.update(studio_params)
       render json: @studio
@@ -35,18 +31,15 @@ class StudiosController < ApplicationController
     end
   end
 
-  # DELETE /studios/1
   def destroy
     @studio.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_studio
       @studio = Studio.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def studio_params
       params.require(:studio).permit(:name, :email, :phone, :address_1, :address_2, :city, :state, :zipcode)
     end

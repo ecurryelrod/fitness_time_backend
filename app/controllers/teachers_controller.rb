@@ -1,7 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: %i[ show update destroy ]
 
-  # GET /teachers
   def index
     teachers = Teacher.all
 
@@ -9,13 +8,11 @@ class TeachersController < ApplicationController
     # render json: teachers
   end
 
-  # GET /teachers/1
   def show
     render json: TeacherSerializer.new(@teacher)
     # render json: @teacher
   end
 
-  # POST /teachers
   def create
     @teacher = Teacher.new(teacher_params)
 
@@ -26,7 +23,6 @@ class TeachersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /teachers/1
   def update
     if @teacher.update(teacher_params)
       render json: @teacher
@@ -35,18 +31,15 @@ class TeachersController < ApplicationController
     end
   end
 
-  # DELETE /teachers/1
   def destroy
     @teacher.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_teacher
       @teacher = Teacher.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def teacher_params
       params.require(:teacher).permit(:name, :bio)
     end
